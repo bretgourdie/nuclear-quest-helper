@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GammaCard : Card
+public class GammaCard : MonoBehaviour
 {
     [SerializeField] int RadiationAmount;
 

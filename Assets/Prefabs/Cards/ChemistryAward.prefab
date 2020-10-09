@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1715167760392330811}
   - component: {fileID: 6295376309001889087}
   - component: {fileID: 8061257823220161189}
+  - component: {fileID: 5141442686003200590}
+  - component: {fileID: 784312662635198086}
   m_Layer: 0
   m_Name: ChemistryAward
   m_TagString: Untagged
@@ -94,6 +96,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32dae223423922418fbd5c06635e17f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberInDeck: 4
   PlaysImmediately: 0
   DrawRadiationAfterUse: 0
+--- !u!114 &5141442686003200590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3659350864242063578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0dc29ebf4057df439684e836dcc2899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NumberInDeck: 4
+--- !u!61 &784312662635198086
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3659350864242063578}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.37, y: 3.42}
+    newSize: {x: 2.37, y: 3.42}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.37, y: 3.42}
+  m_EdgeRadius: 0

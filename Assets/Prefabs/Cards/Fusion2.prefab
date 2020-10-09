@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8226776021615456396}
   - component: {fileID: 4442979083535677488}
   - component: {fileID: -7861604385773577709}
+  - component: {fileID: 2992029022039048831}
+  - component: {fileID: -5239669902534819361}
   m_Layer: 0
   m_Name: Fusion2
   m_TagString: Untagged
@@ -94,6 +96,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32dae223423922418fbd5c06635e17f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberInDeck: 6
   PlaysImmediately: 1
   DrawRadiationAfterUse: 0
+--- !u!114 &2992029022039048831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5325354088679551953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0dc29ebf4057df439684e836dcc2899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NumberInDeck: 6
+--- !u!61 &-5239669902534819361
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5325354088679551953}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.43, y: 3.42}
+    newSize: {x: 2.43, y: 3.42}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.43, y: 3.42}
+  m_EdgeRadius: 0

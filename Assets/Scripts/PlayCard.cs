@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayCard : Card
+public class PlayCard : MonoBehaviour
 {
     [SerializeField] bool PlaysImmediately;
     [SerializeField] bool DrawRadiationAfterUse;
