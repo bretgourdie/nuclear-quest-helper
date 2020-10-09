@@ -6,6 +6,7 @@ public class Deck : MonoBehaviour
 {
     [SerializeField] List<Card> UniqueCards;
     [SerializeField] GameObject ActiveCard;
+    [SerializeField] Transform InstantiatedLocation;
 
     private ActiveCard _activeCard;
 
@@ -22,7 +23,7 @@ public class Deck : MonoBehaviour
         {
             for (int ii = 0; ii < card.NumberInDeck; ii++)
             {
-                cards.Add(Instantiate(card));
+                cards.Add(Instantiate(card, InstantiatedLocation));
             }
         }
 
@@ -57,6 +58,7 @@ public class Deck : MonoBehaviour
     private void _returnCard(Card card)
     {
         _cardQueue.Enqueue(card);
+        card.transform.position = InstantiatedLocation.position;
     }
 
     public void OnMouseDown()

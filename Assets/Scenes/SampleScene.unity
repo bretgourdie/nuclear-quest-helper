@@ -121,6 +121,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &41775019
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 41775020}
+  m_Layer: 0
+  m_Name: HiddenCards
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &41775020
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41775019}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 8.65, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &46265169 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4239747010756827461, guid: 415e7eded1193814e94ee8136feae2f8,
@@ -352,6 +382,11 @@ PrefabInstance:
       propertyPath: ActiveCard
       value: 
       objectReference: {fileID: 2089740891}
+    - target: {fileID: 3907679802384015962, guid: c4084a0b11484da44b2f79f8ef725588,
+        type: 3}
+      propertyPath: InstantiatedLocation
+      value: 
+      objectReference: {fileID: 41775020}
     - target: {fileID: 6791993561460510143, guid: c4084a0b11484da44b2f79f8ef725588,
         type: 3}
       propertyPath: m_RootOrder
@@ -608,6 +643,11 @@ PrefabInstance:
       propertyPath: ActiveCard
       value: 
       objectReference: {fileID: 2089740891}
+    - target: {fileID: 3907679802384015962, guid: c4084a0b11484da44b2f79f8ef725588,
+        type: 3}
+      propertyPath: InstantiatedLocation
+      value: 
+      objectReference: {fileID: 41775020}
     - target: {fileID: 6791993561460510143, guid: c4084a0b11484da44b2f79f8ef725588,
         type: 3}
       propertyPath: m_RootOrder
