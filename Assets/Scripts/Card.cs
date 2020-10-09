@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Card : MonoBehaviour
 {
+    [SerializeField] public int NumberInDeck;
+
     private bool isBeingHeld;
 
     private float startPositionX;

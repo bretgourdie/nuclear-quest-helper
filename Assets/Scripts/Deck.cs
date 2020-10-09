@@ -4,14 +4,28 @@ using UnityEngine;
 
 public class Deck : MonoBehaviour
 {
-    [SerializeField] List<Card> Cards;
+    [SerializeField] List<Card> UniqueCards;
+    [SerializeField] GameObject ActiveCard;
 
-    private Queue<Card> cardQueue;
+    private ActiveCard _activeCard;
+
+    private Queue<Card> _cardQueue;
 
     // Start is called before the first frame update
     void Start()
     {
-        var cards = new List<Card>(Cards);
+        _cardQueue = new Queue<Card>();
+        _activeCard = ActiveCard.GetComponent<ActiveCard>();
+
+        var cards = new List<Card>();
+        foreach (var card in UniqueCards)
+        {
+            for (int ii = 0; ii < card.NumberInDeck; ii++)
+            {
+                cards.Add(Instantiate(card));
+            }
+        }
+
         while (cards.Count > 0)
         {
             var randomIndex = Random.Range(0, cards.Count);
@@ -20,7 +34,7 @@ public class Deck : MonoBehaviour
 
             cards.RemoveAt(randomIndex);
 
-            cardQueue.Enqueue(removed);
+            _cardQueue.Enqueue(removed);
         }
     }
 
@@ -30,18 +44,27 @@ public class Deck : MonoBehaviour
         
     }
 
-    public Card DrawCard()
+    private Card _drawCard()
     {
-        if (cardQueue.Count > 0)
+        if (_cardQueue.Count > 0)
         {
-            return cardQueue.Dequeue();
+            return _cardQueue.Dequeue();
         }
 
         return null;
     }
 
-    public void DiscardCard(Card card)
+    private void _returnCard(Card card)
     {
-        cardQueue.Enqueue(card);
+        _cardQueue.Enqueue(card);
+    }
+
+    public void OnMouseDown()
+    {
+        if (_activeCard.Card != null)
+        {
+            var card = _drawCard();
+            _activeCard.Card = card;
+        }
     }
 }
