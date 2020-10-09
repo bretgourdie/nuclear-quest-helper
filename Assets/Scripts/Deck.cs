@@ -63,10 +63,11 @@ public class Deck : MonoBehaviour
 
     public void OnMouseDown()
     {
-        if (_activeCard.Card != null)
+        if (_activeCard.Card == null)
         {
             var card = _drawCard();
             _activeCard.Card = card;
+            card.transform.position = _activeCard.transform.position;
         }
     }
 }

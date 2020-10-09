@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6791993561460510143}
   - component: {fileID: 9145899721294024356}
   - component: {fileID: 3907679802384015962}
-  - component: {fileID: -7455423477930458966}
+  - component: {fileID: -8920151340867919801}
   m_Layer: 0
   m_Name: Deck
   m_TagString: Untagged
@@ -97,7 +97,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UniqueCards: []
   ActiveCard: {fileID: 0}
---- !u!61 &-7455423477930458966
+  InstantiatedLocation: {fileID: 0}
+--- !u!61 &-8920151340867919801
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,5 +122,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.0001, y: 0.0001}
+  m_Size: {x: 2.53, y: 3.51}
   m_EdgeRadius: 0
