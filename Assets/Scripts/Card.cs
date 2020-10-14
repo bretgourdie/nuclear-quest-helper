@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Card : MonoBehaviour
+public class Card : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField] public int NumberInDeck = default;
 
@@ -36,7 +37,7 @@ public class Card : MonoBehaviour
         }
     }
 
-    private void OnMouseDown()
+    private void handleMouseDown()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -48,16 +49,26 @@ public class Card : MonoBehaviour
         }
     }
 
+    private void handleMouseUp()
+    {
+        isBeingHeld = false;
+    }
+
     private Vector3 getMousePosition()
     {
         var mousePosition = Input.mousePosition;
         var mousePositionWorldPoint = Camera.main.ScreenToWorldPoint(mousePosition);
 
-        return mousePositionWorldPoint;
+        return mousePosition;
     }
 
-    private void OnMouseUp()
+    public void OnPointerDown(PointerEventData eventData)
     {
-        isBeingHeld = false;
+        handleMouseDown();
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        handleMouseUp();
     }
 }

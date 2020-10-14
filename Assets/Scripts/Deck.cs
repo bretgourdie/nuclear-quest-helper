@@ -23,7 +23,9 @@ public class Deck : MonoBehaviour
         {
             for (int ii = 0; ii < card.NumberInDeck; ii++)
             {
-                cards.Add(Instantiate(card, InstantiatedLocation));
+                var clonedCard = Instantiate(card);
+                clonedCard.transform.SetParent(InstantiatedLocation);
+                cards.Add(clonedCard);
             }
         }
 
