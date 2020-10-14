@@ -23,7 +23,7 @@ public class Deck : MonoBehaviour
         {
             for (int ii = 0; ii < card.NumberInDeck; ii++)
             {
-                var clonedCard = Instantiate(card);
+                var clonedCard = Instantiate(card, InstantiatedLocation.position, Quaternion.identity);
                 clonedCard.transform.SetParent(InstantiatedLocation);
                 cards.Add(clonedCard);
             }
@@ -51,6 +51,7 @@ public class Deck : MonoBehaviour
     {
         if (_cardQueue.Count > 0)
         {
+            var card = _cardQueue.Dequeue();
             return _cardQueue.Dequeue();
         }
 
