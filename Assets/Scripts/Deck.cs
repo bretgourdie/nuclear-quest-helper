@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Deck : MonoBehaviour
 {
-    [SerializeField] List<Card> UniqueCards;
-    [SerializeField] GameObject ActiveCard;
-    [SerializeField] Transform InstantiatedLocation;
+    [SerializeField] List<Card> UniqueCards = default;
+    [SerializeField] GameObject ActiveCard = default;
+    [SerializeField] Transform InstantiatedLocation = default;
 
     private ActiveCard _activeCard;
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Card : MonoBehaviour
 {
-    [SerializeField] public int NumberInDeck;
+    [SerializeField] public int NumberInDeck = default;
 
     private bool isBeingHeld;
 
