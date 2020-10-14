@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7120812735109352408
+--- !u!1 &7880809618669620005
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,26 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2219398784307899768}
-  - component: {fileID: 725588248085417915}
-  - component: {fileID: 3276960015133049343}
-  - component: {fileID: -719693851275922498}
+  - component: {fileID: 6686378083049029604}
+  - component: {fileID: 6182860359311627970}
+  - component: {fileID: 2204191409386960705}
+  - component: {fileID: 3456683504777012078}
+  - component: {fileID: 8895243679044120815}
+  - component: {fileID: 6106782651826654045}
   m_Layer: 5
-  m_Name: Hand
+  m_Name: CardUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &2219398784307899768
+--- !u!224 &6686378083049029604
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7120812735109352408}
+  m_GameObject: {fileID: 7880809618669620005}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -35,24 +37,24 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: -6.699995}
-  m_SizeDelta: {x: 100, y: 38.999992}
+  m_AnchoredPosition: {x: -0.2, y: 63.8}
+  m_SizeDelta: {x: 134.31454, y: 191.89633}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &725588248085417915
+--- !u!222 &6182860359311627970
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7120812735109352408}
+  m_GameObject: {fileID: 7880809618669620005}
   m_CullTransparentMesh: 0
---- !u!114 &3276960015133049343
+--- !u!114 &2204191409386960705
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7120812735109352408}
+  m_GameObject: {fileID: 7880809618669620005}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -65,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 572ed5282faa2414d9e60fb543d683f4, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -75,13 +77,13 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!61 &-719693851275922498
+--- !u!61 &3456683504777012078
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7120812735109352408}
+  m_GameObject: {fileID: 7880809618669620005}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -99,5 +101,32 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 99.03, y: 140.4}
+  m_Size: {x: 135.95, y: 190.5}
   m_EdgeRadius: 0
+--- !u!114 &8895243679044120815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7880809618669620005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32dae223423922418fbd5c06635e17f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlaysImmediately: 0
+  DrawRadiationAfterUse: 0
+--- !u!114 &6106782651826654045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7880809618669620005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0dc29ebf4057df439684e836dcc2899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NumberInDeck: 0
