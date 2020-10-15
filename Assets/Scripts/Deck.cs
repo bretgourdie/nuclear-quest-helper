@@ -7,15 +7,15 @@ public class Deck : MonoBehaviour
     [SerializeField] List<Card> UniqueCards = default;
     [SerializeField] GameObject ActiveCard = default;
     [SerializeField] Transform InstantiatedLocation = default;
+    [SerializeField] public List<Card> CardQueue = default;
 
     private ActiveCard _activeCard;
 
-    private Queue<Card> _cardQueue;
 
     // Start is called before the first frame update
     void Start()
     {
-        _cardQueue = new Queue<Card>();
+        CardQueue = new List<Card>();
         _activeCard = ActiveCard.GetComponent<ActiveCard>();
 
         var cards = new List<Card>();
@@ -37,7 +37,7 @@ public class Deck : MonoBehaviour
 
             cards.RemoveAt(randomIndex);
 
-            _cardQueue.Enqueue(removed);
+            CardQueue.Add(removed);
         }
     }
 
@@ -49,16 +49,17 @@ public class Deck : MonoBehaviour
 
     public void DrawCard()
     {
-        if (_cardQueue.Count > 0)
+        if (CardQueue.Count > 0)
         {
-            var card = _cardQueue.Dequeue();
+            var card = CardQueue[0];
+            CardQueue.RemoveAt(0);
             _activeCard.Card = card;
         }
     }
 
     public void ReturnCard(Card card)
     {
-        _cardQueue.Enqueue(card);
+        CardQueue.Add(card);
         _activeCard.Card = null;
         card.transform.position = InstantiatedLocation.position;
     }
