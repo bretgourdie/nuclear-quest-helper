@@ -7,7 +7,7 @@ public class Card : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField] public int NumberInDeck = default;
 
-    private bool isBeingHeld;
+    public bool IsBeingHeld { get; private set; }
 
     private float startPositionX;
     private float startPositionY;
@@ -26,7 +26,7 @@ public class Card : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private void handleDrag()
     {
-        if (isBeingHeld)
+        if (IsBeingHeld)
         {
             var mousePosition = getMousePosition();
 
@@ -41,7 +41,7 @@ public class Card : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         if (Input.GetMouseButtonDown(0))
         {
-            isBeingHeld = true;
+            IsBeingHeld = true;
             var mousePosition = getMousePosition();
 
             startPositionX = mousePosition.x - this.transform.localPosition.x;
@@ -51,7 +51,7 @@ public class Card : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private void handleMouseUp()
     {
-        isBeingHeld = false;
+        IsBeingHeld = false;
     }
 
     private Vector3 getMousePosition()
