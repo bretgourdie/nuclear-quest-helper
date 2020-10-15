@@ -7,6 +7,7 @@ public class Hand : MonoBehaviour
 {
     [SerializeField] GameObject ActiveCard;
     [SerializeField] GameObject GeigerCounter;
+    [SerializeField] Transform HeldCardsLocation;
 
     private ActiveCard _activeCard;
     private Slider _slider;
@@ -41,6 +42,7 @@ public class Hand : MonoBehaviour
             handleGammaCardGain(card.GetComponent<GammaCard>());
 
             _activeCard.Card = null;
+            card.transform.position = HeldCardsLocation.position;
         }
     }
 
