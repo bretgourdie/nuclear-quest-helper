@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a42c79dc5283034b8f09e444b65051e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RadiationAmount: 10
+  RadiationAmount: 2
 --- !u!1001 &293273348182880390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -139,7 +139,7 @@ PrefabInstance:
     - target: {fileID: 7880809618669620005, guid: 6cc31840cafb06b418971506c262c1b2,
         type: 3}
       propertyPath: m_Name
-      value: CardUI
+      value: GammaRadiation_10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8895243679044120815, guid: 6cc31840cafb06b418971506c262c1b2, type: 3}

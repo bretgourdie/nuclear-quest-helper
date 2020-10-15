@@ -787,6 +787,11 @@ PrefabInstance:
       propertyPath: ActiveCard
       value: 
       objectReference: {fileID: 1791320451}
+    - target: {fileID: 8683249721917165891, guid: 03a31fd550a0f73419bc6048f8214aab,
+        type: 3}
+      propertyPath: GeigerCounter
+      value: 
+      objectReference: {fileID: 1443897053}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03a31fd550a0f73419bc6048f8214aab, type: 3}
 --- !u!224 &483130514 stripped
@@ -1025,6 +1030,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &934306693 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1902346260519145952, guid: 39065bc0fbe141c4495c8d11012cd690,
+    type: 3}
+  m_PrefabInstance: {fileID: 63453776}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1043916195 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1902346260519145952, guid: 39065bc0fbe141c4495c8d11012cd690,
+    type: 3}
+  m_PrefabInstance: {fileID: 441787897}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1050337564 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4239747010756827461, guid: 415e7eded1193814e94ee8136feae2f8,
@@ -1304,6 +1321,11 @@ PrefabInstance:
       propertyPath: ActiveCard
       value: 
       objectReference: {fileID: 1791320451}
+    - target: {fileID: 8683249721917165891, guid: 03a31fd550a0f73419bc6048f8214aab,
+        type: 3}
+      propertyPath: GeigerCounter
+      value: 
+      objectReference: {fileID: 934306693}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03a31fd550a0f73419bc6048f8214aab, type: 3}
 --- !u!224 &1168013537 stripped
@@ -1311,6 +1333,12 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2219398784307899768, guid: 03a31fd550a0f73419bc6048f8214aab,
     type: 3}
   m_PrefabInstance: {fileID: 1168013536}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1312393793 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1902346260519145952, guid: 39065bc0fbe141c4495c8d11012cd690,
+    type: 3}
+  m_PrefabInstance: {fileID: 1085755165}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1409701638
 GameObject:
@@ -1378,6 +1406,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1443897053 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1902346260519145952, guid: 39065bc0fbe141c4495c8d11012cd690,
+    type: 3}
+  m_PrefabInstance: {fileID: 5486672812961458038}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1444482058 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4239747010756827461, guid: 415e7eded1193814e94ee8136feae2f8,
@@ -1516,6 +1550,11 @@ PrefabInstance:
       propertyPath: ActiveCard
       value: 
       objectReference: {fileID: 1791320451}
+    - target: {fileID: 8683249721917165891, guid: 03a31fd550a0f73419bc6048f8214aab,
+        type: 3}
+      propertyPath: GeigerCounter
+      value: 
+      objectReference: {fileID: 1043916195}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03a31fd550a0f73419bc6048f8214aab, type: 3}
 --- !u!224 &1569115926 stripped
@@ -1887,6 +1926,11 @@ PrefabInstance:
       propertyPath: ActiveCard
       value: 
       objectReference: {fileID: 1791320451}
+    - target: {fileID: 8683249721917165891, guid: 03a31fd550a0f73419bc6048f8214aab,
+        type: 3}
+      propertyPath: GeigerCounter
+      value: 
+      objectReference: {fileID: 1312393793}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03a31fd550a0f73419bc6048f8214aab, type: 3}
 --- !u!224 &866061968980753487 stripped

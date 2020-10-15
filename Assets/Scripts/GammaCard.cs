@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GammaCard : MonoBehaviour
 {
-    [SerializeField] int RadiationAmount = default;
+    [SerializeField] public int RadiationAmount = default;
 
     // Start is called before the first frame update
     void Start()

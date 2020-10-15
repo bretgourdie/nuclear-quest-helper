@@ -1,17 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Hand : MonoBehaviour
 {
     [SerializeField] GameObject ActiveCard;
+    [SerializeField] GameObject GeigerCounter;
 
     private ActiveCard _activeCard;
+    private Slider _slider;
+
+    private List<GameObject> _playCards;
+    private List<GameObject> _gammaCards;
 
     // Start is called before the first frame update
     void Start()
     {
+        _playCards = new List<GameObject>();
+        _gammaCards = new List<GameObject>();
+
         _activeCard = ActiveCard.GetComponent<ActiveCard>();
+        _slider = GeigerCounter.GetComponent<Slider>();
     }
 
     // Update is called once per frame
@@ -26,31 +36,74 @@ public class Hand : MonoBehaviour
         {
             var card = _activeCard.Card;
 
-            handlePlayCardDrop(card.GetComponent<PlayCard>());
+            handlePlayCardGain(card.GetComponent<PlayCard>());
 
-            handleGammaCardDrop(card.GetComponent<GammaCard>());
+            handleGammaCardGain(card.GetComponent<GammaCard>());
 
             _activeCard.Card = null;
         }
     }
 
-    private void handlePlayCardDrop(PlayCard playCard)
+    private void handlePlayCardGain(PlayCard playCard)
     {
-        if (playCard == null)
+        if (!isReal(playCard))
         {
             return;
         }
 
-        Debug.Log("PlayCard detected");
+        addToList(playCard.gameObject, _playCards);
     }
 
-    private void handleGammaCardDrop(GammaCard gammaCard)
+    private void handleGammaCardGain(GammaCard gammaCard)
     {
-        if (gammaCard == null)
+        if (!isReal(gammaCard))
         {
             return;
         }
 
-        Debug.Log("Gamma detected");
+        addToList(gammaCard.gameObject, _gammaCards);
+
+        handleGeigerAdjustment(_slider, gammaCard.RadiationAmount);
+    }
+
+    private void handleGeigerAdjustment(Slider slider, int radiationAmount)
+    {
+        if (slider != null)
+        {
+            slider.value += radiationAmount;
+        }
+    }
+
+    private void handleGammaCardDiscard(GammaCard gammaCard)
+    {
+        if (!isReal(gammaCard))
+        {
+            return;
+        }
+
+        handleGeigerAdjustment(_slider, -gammaCard.RadiationAmount);
+    }
+
+    private void handlePlayCardDiscard(PlayCard playCard)
+    {
+        if (!isReal(playCard))
+        {
+            return;
+        }
+    }
+
+    private bool isReal(Component component)
+    {
+        return component != null;
+    }
+
+    private void addToList(GameObject gameObject, List<GameObject> list)
+    {
+        list.Add(gameObject);
+    }
+
+    private void removeFromList(GameObject gameObject, List<GameObject> list)
+    {
+        list.Remove(gameObject);
     }
 }
