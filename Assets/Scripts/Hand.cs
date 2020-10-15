@@ -7,9 +7,14 @@ public class Hand : MonoBehaviour
 {
     [SerializeField] GameObject ActiveCard;
     [SerializeField] GameObject GeigerCounter;
+    [SerializeField] GameObject PlayCardsDeck;
+    [SerializeField] GameObject GammaCardsDeck;
+
     [SerializeField] Transform HeldCardsLocation;
 
     private ActiveCard _activeCard;
+    private Deck _gammaCardsDeck;
+    private Deck _playCardsDeck;
     private Slider _slider;
 
     private List<GameObject> _playCards;
@@ -22,6 +27,8 @@ public class Hand : MonoBehaviour
         _gammaCards = new List<GameObject>();
 
         _activeCard = ActiveCard.GetComponent<ActiveCard>();
+        _gammaCardsDeck = GammaCardsDeck.GetComponent<Deck>();
+        _playCardsDeck = PlayCardsDeck.GetComponent<Deck>();
         _slider = GeigerCounter.GetComponent<Slider>();
     }
 
@@ -40,9 +47,6 @@ public class Hand : MonoBehaviour
             handlePlayCardGain(card.GetComponent<PlayCard>());
 
             handleGammaCardGain(card.GetComponent<GammaCard>());
-
-            _activeCard.Card = null;
-            card.transform.position = HeldCardsLocation.position;
         }
     }
 
@@ -53,7 +57,24 @@ public class Hand : MonoBehaviour
             return;
         }
 
-        addToList(playCard.gameObject, _playCards);
+        if (playCard.PlaysImmediately)
+        {
+            var card = playCard.gameObject.GetComponent<Card>();
+            _playCardsDeck.ReturnCard(card);
+        }
+
+        else
+        {
+            addToList(playCard.gameObject, _playCards);
+            moveCardToHeldCards(playCard.gameObject);
+        }
+
+        cardIsNoLongerActive();
+
+        if (playCard.DrawRadiationAfterUse)
+        {
+            _gammaCardsDeck.DrawCard();
+        }
     }
 
     private void handleGammaCardGain(GammaCard gammaCard)
@@ -66,6 +87,20 @@ public class Hand : MonoBehaviour
         addToList(gammaCard.gameObject, _gammaCards);
 
         handleGeigerAdjustment(_slider, gammaCard.RadiationAmount);
+
+        moveCardToHeldCards(gammaCard.gameObject);
+
+        cardIsNoLongerActive();
+    }
+
+    private void moveCardToHeldCards(GameObject card)
+    {
+        card.transform.position = HeldCardsLocation.position;
+    }
+
+    private void cardIsNoLongerActive()
+    {
+        _activeCard.Card = null;
     }
 
     private void handleGeigerAdjustment(Slider slider, int radiationAmount)

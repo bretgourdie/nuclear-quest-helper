@@ -4,7 +4,20 @@ using UnityEngine;
 
 public class ActiveCard : MonoBehaviour
 {
-    public Card Card { get; set; }
+    private Card _card;
+    public Card Card
+    {
+        get => _card;
+        set
+        {
+            _card = value;
+
+            if (_card != null)
+            {
+                _card.transform.position = transform.position;
+            }
+        }
+    }
 
     // Start is called before the first frame update
     void Start()

@@ -797,6 +797,16 @@ PrefabInstance:
       propertyPath: HeldCardsLocation
       value: 
       objectReference: {fileID: 584412863}
+    - target: {fileID: 8683249721917165891, guid: 03a31fd550a0f73419bc6048f8214aab,
+        type: 3}
+      propertyPath: PlayCardsDeck
+      value: 
+      objectReference: {fileID: 7054277056457690893}
+    - target: {fileID: 8683249721917165891, guid: 03a31fd550a0f73419bc6048f8214aab,
+        type: 3}
+      propertyPath: GammaCardsDeck
+      value: 
+      objectReference: {fileID: 726870994}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03a31fd550a0f73419bc6048f8214aab, type: 3}
 --- !u!224 &483130514 stripped
@@ -1371,6 +1381,16 @@ PrefabInstance:
       propertyPath: HeldCardsLocation
       value: 
       objectReference: {fileID: 584412863}
+    - target: {fileID: 8683249721917165891, guid: 03a31fd550a0f73419bc6048f8214aab,
+        type: 3}
+      propertyPath: GammaCardsDeck
+      value: 
+      objectReference: {fileID: 726870994}
+    - target: {fileID: 8683249721917165891, guid: 03a31fd550a0f73419bc6048f8214aab,
+        type: 3}
+      propertyPath: PlayCardsDeck
+      value: 
+      objectReference: {fileID: 7054277056457690893}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03a31fd550a0f73419bc6048f8214aab, type: 3}
 --- !u!224 &1168013537 stripped
@@ -1605,6 +1625,16 @@ PrefabInstance:
       propertyPath: HeldCardsLocation
       value: 
       objectReference: {fileID: 584412863}
+    - target: {fileID: 8683249721917165891, guid: 03a31fd550a0f73419bc6048f8214aab,
+        type: 3}
+      propertyPath: PlayCardsDeck
+      value: 
+      objectReference: {fileID: 7054277056457690893}
+    - target: {fileID: 8683249721917165891, guid: 03a31fd550a0f73419bc6048f8214aab,
+        type: 3}
+      propertyPath: GammaCardsDeck
+      value: 
+      objectReference: {fileID: 726870994}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03a31fd550a0f73419bc6048f8214aab, type: 3}
 --- !u!224 &1569115926 stripped
@@ -1987,6 +2017,16 @@ PrefabInstance:
       propertyPath: HeldCardsLocation
       value: 
       objectReference: {fileID: 584412863}
+    - target: {fileID: 8683249721917165891, guid: 03a31fd550a0f73419bc6048f8214aab,
+        type: 3}
+      propertyPath: PlayCardsDeck
+      value: 
+      objectReference: {fileID: 7054277056457690893}
+    - target: {fileID: 8683249721917165891, guid: 03a31fd550a0f73419bc6048f8214aab,
+        type: 3}
+      propertyPath: GammaCardsDeck
+      value: 
+      objectReference: {fileID: 726870994}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03a31fd550a0f73419bc6048f8214aab, type: 3}
 --- !u!224 &866061968980753487 stripped

@@ -47,20 +47,19 @@ public class Deck : MonoBehaviour
         
     }
 
-    private Card _drawCard()
+    public void DrawCard()
     {
         if (_cardQueue.Count > 0)
         {
             var card = _cardQueue.Dequeue();
-            return _cardQueue.Dequeue();
+            _activeCard.Card = card;
         }
-
-        return null;
     }
 
-    private void _returnCard(Card card)
+    public void ReturnCard(Card card)
     {
         _cardQueue.Enqueue(card);
+        _activeCard.Card = null;
         card.transform.position = InstantiatedLocation.position;
     }
 
@@ -68,9 +67,7 @@ public class Deck : MonoBehaviour
     {
         if (_activeCard.Card == null)
         {
-            var card = _drawCard();
-            _activeCard.Card = card;
-            card.transform.position = _activeCard.transform.position;
+            DrawCard();
         }
     }
 }

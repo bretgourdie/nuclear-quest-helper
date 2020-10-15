@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayCard : MonoBehaviour
 {
-    [SerializeField] bool PlaysImmediately = default;
-    [SerializeField] bool DrawRadiationAfterUse = default;
+    [SerializeField] public bool PlaysImmediately = default;
+    [SerializeField] public bool DrawRadiationAfterUse = default;
 
     // Start is called before the first frame update
     void Start()
