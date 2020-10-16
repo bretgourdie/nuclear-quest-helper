@@ -82,6 +82,20 @@ public class Hand : MonoBehaviour
         }
     }
 
+    private void handleLoseAllGammaRadiation(bool loseAllGammaRadiation)
+    {
+        if (loseAllGammaRadiation)
+        {
+            foreach (var gammaCard in _gammaCards)
+            {
+                _slider.value -= gammaCard.GetComponent<GammaCard>().RadiationAmount;
+                _gammaCardsDeck.ReturnCard(gammaCard.GetComponent<Card>());
+            }
+
+            _gammaCards.RemoveAll(x => true);
+        }
+    }
+
     private void handleGammaCardGain(GammaCard gammaCard)
     {
         if (!isReal(gammaCard))
