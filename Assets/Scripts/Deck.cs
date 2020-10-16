@@ -8,9 +8,9 @@ public class Deck : MonoBehaviour
     [SerializeField] GameObject ActiveCard = default;
     [SerializeField] Transform InstantiatedLocation = default;
     [SerializeField] public List<Card> CardQueue = default;
+    [SerializeField] public AudioClip DrawCardSound = default;
 
     private ActiveCard _activeCard;
-
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +54,7 @@ public class Deck : MonoBehaviour
             var card = CardQueue[0];
             CardQueue.RemoveAt(0);
             _activeCard.Card = card;
+            AudioSource.PlayClipAtPoint(DrawCardSound, Camera.main.transform.position);
         }
     }
 

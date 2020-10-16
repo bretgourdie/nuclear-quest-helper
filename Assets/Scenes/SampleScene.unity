@@ -1056,6 +1056,7 @@ MonoBehaviour:
   ActiveCard: {fileID: 1791320451}
   InstantiatedLocation: {fileID: 321267647}
   CardQueue: []
+  DrawCardSound: {fileID: 8300000, guid: a021c11d5145cef47b4c1f1623ccd767, type: 3}
 --- !u!114 &726871000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2862,6 +2863,7 @@ MonoBehaviour:
   ActiveCard: {fileID: 1791320451}
   InstantiatedLocation: {fileID: 321267647}
   CardQueue: []
+  DrawCardSound: {fileID: 8300000, guid: a021c11d5145cef47b4c1f1623ccd767, type: 3}
 --- !u!114 &7054277056457690896
 MonoBehaviour:
   m_ObjectHideFlags: 0
