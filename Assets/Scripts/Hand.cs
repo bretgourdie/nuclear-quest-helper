@@ -19,6 +19,9 @@ public class Hand : MonoBehaviour
     private Toggle _skipTurnMarker;
     private Slider _slider;
 
+    private float _handCardHorizontalOffset = 50;
+    private float _handCardVerticalOffset = 30;
+
     private List<GameObject> _playCards;
     private List<GameObject> _gammaCards;
 
@@ -69,7 +72,7 @@ public class Hand : MonoBehaviour
         else
         {
             addToList(playCard.gameObject, _playCards);
-            moveCardToHeldCards(playCard.gameObject);
+            resetCardStack(_playCards);
         }
 
         handleSkipTurnMarker(playCard.SkipNextTurn);
@@ -105,9 +108,9 @@ public class Hand : MonoBehaviour
 
         addToList(gammaCard.gameObject, _gammaCards);
 
-        handleGeigerAdjustment(_slider, gammaCard.RadiationAmount);
+        resetCardStack(_gammaCards);
 
-        moveCardToHeldCards(gammaCard.gameObject);
+        handleGeigerAdjustment(_slider, gammaCard.RadiationAmount);
 
         handleSkipTurnMarker(_slider.value >= _slider.maxValue);
 
@@ -119,9 +122,23 @@ public class Hand : MonoBehaviour
         _skipTurnMarker.isOn = shouldCheck;
     }
 
-    private void moveCardToHeldCards(GameObject card)
+    private void resetCardStack(List<GameObject> deck)
     {
-        card.transform.position = HeldCardsLocation.position;
+        for (int ii = 0; ii < deck.Count; ii++)
+        {
+            var card = deck[ii];
+
+            var isPlayCard = card.GetComponent<PlayCard>() != null;
+
+            float horizontalOffset = _handCardHorizontalOffset * (isPlayCard ? -1 : 1);
+
+            card.transform.position = new Vector3(
+                gameObject.transform.position.x + horizontalOffset,
+                gameObject.transform.position.y + ii * _handCardVerticalOffset,
+                gameObject.transform.position.z);
+
+            card.transform.localScale = new Vector3(.5f, .5f);
+        }
     }
 
     private void cardIsNoLongerActive()
