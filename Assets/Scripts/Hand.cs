@@ -9,12 +9,14 @@ public class Hand : MonoBehaviour
     [SerializeField] GameObject GeigerCounter;
     [SerializeField] GameObject PlayCardsDeck;
     [SerializeField] GameObject GammaCardsDeck;
+    [SerializeField] GameObject SkipTurnMarker;
 
     [SerializeField] Transform HeldCardsLocation;
 
     private ActiveCard _activeCard;
     private Deck _gammaCardsDeck;
     private Deck _playCardsDeck;
+    private Toggle _skipTurnMarker;
     private Slider _slider;
 
     private List<GameObject> _playCards;
@@ -29,6 +31,7 @@ public class Hand : MonoBehaviour
         _activeCard = ActiveCard.GetComponent<ActiveCard>();
         _gammaCardsDeck = GammaCardsDeck.GetComponent<Deck>();
         _playCardsDeck = PlayCardsDeck.GetComponent<Deck>();
+        _skipTurnMarker = SkipTurnMarker.GetComponent<Toggle>();
         _slider = GeigerCounter.GetComponent<Slider>();
     }
 
@@ -69,6 +72,8 @@ public class Hand : MonoBehaviour
             moveCardToHeldCards(playCard.gameObject);
         }
 
+        handleSkipTurnMarker(playCard.SkipNextTurn);
+
         cardIsNoLongerActive();
 
         if (playCard.DrawRadiationAfterUse)
@@ -90,7 +95,14 @@ public class Hand : MonoBehaviour
 
         moveCardToHeldCards(gammaCard.gameObject);
 
+        handleSkipTurnMarker(_slider.value >= _slider.maxValue);
+
         cardIsNoLongerActive();
+    }
+
+    private void handleSkipTurnMarker(bool shouldCheck)
+    {
+        _skipTurnMarker.isOn = shouldCheck;
     }
 
     private void moveCardToHeldCards(GameObject card)

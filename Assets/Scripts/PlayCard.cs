@@ -6,6 +6,7 @@ public class PlayCard : MonoBehaviour
 {
     [SerializeField] public bool PlaysImmediately = default;
     [SerializeField] public bool DrawRadiationAfterUse = default;
+    [SerializeField] public bool SkipNextTurn = default;
 
     // Start is called before the first frame update
     void Start()
