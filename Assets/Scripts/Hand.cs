@@ -164,6 +164,8 @@ public class Hand : MonoBehaviour
         }
 
         handleGeigerAdjustment(_slider, -gammaCard.RadiationAmount);
+
+        removeFromList(gammaCard.gameObject, _gammaCards);
     }
 
     private void handlePlayCardDiscard(PlayCard playCard)
@@ -172,6 +174,8 @@ public class Hand : MonoBehaviour
         {
             return;
         }
+
+        removeFromList(playCard.gameObject, _playCards);
     }
 
     private bool isReal(Component component)
@@ -182,6 +186,24 @@ public class Hand : MonoBehaviour
     private void addToList(GameObject gameObject, List<GameObject> list)
     {
         list.Add(gameObject);
+    }
+
+    public bool HasCard(Card card)
+    {
+        return _playCards.Contains(card.gameObject)
+            || _gammaCards.Contains(card.gameObject);
+    }
+
+    public void LoseCard(Card card)
+    {
+        if (!isReal(card))
+        {
+            return;
+        }
+
+        handlePlayCardDiscard(card.GetComponent<PlayCard>());
+
+        handleGammaCardDiscard(card.GetComponent<GammaCard>());
     }
 
     private void removeFromList(GameObject gameObject, List<GameObject> list)

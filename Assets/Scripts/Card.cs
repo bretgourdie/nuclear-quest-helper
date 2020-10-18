@@ -21,18 +21,29 @@ public class Card : MonoBehaviour
 
     public void ReturnToDeck()
     {
-        Deck deck = default;
-        if (GetComponent<PlayCard>() != null)
-        {
-            deck = findDeck("PlayDeckUI");
-        }
+        string deckName = GetComponent<PlayCard>() != null
+            ? "PlayDeckUI"
+            : "GammaDeckUI";
 
-        else if (GetComponent<GammaCard>() != null)
-        {
-            deck = findDeck("GammaDeckUI");
-        }
+        var deck = findDeck(deckName);
 
         deck.ReturnCard(this);
+
+        removeCardFromHand();
+    }
+
+    private void removeCardFromHand()
+    {
+        var hands = FindObjectsOfType<Hand>();
+
+        foreach (var hand in hands)
+        {
+            if (hand.HasCard(this))
+            {
+                hand.LoseCard(this);
+                return;
+            }
+        }
     }
 
     private Deck findDeck(string deckName)
