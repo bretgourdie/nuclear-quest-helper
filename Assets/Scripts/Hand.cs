@@ -138,6 +138,8 @@ public class Hand : MonoBehaviour
                 gameObject.transform.position.z);
 
             card.transform.localScale = new Vector3(.5f, .5f);
+
+            card.transform.SetAsLastSibling();
         }
     }
 
