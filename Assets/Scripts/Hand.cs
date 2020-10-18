@@ -137,7 +137,7 @@ public class Hand : MonoBehaviour
                 gameObject.transform.position.y + ii * _handCardVerticalOffset,
                 gameObject.transform.position.z);
 
-            card.transform.localScale = new Vector3(.5f, .5f);
+            card.transform.localScale = new Vector3(.33f, .33f);
 
             card.transform.SetAsLastSibling();
         }
