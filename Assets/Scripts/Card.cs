@@ -3,72 +3,49 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Card : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class Card : MonoBehaviour
 {
     [SerializeField] public int NumberInDeck = default;
-
-    public bool IsBeingHeld { get; private set; }
-
-    private float startPositionX;
-    private float startPositionY;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        handleDrag();
+
     }
 
-    private void handleDrag()
+    public void ReturnToDeck()
     {
-        if (IsBeingHeld)
+        Deck deck = default;
+        if (GetComponent<PlayCard>() != null)
         {
-            var mousePosition = getMousePosition();
-
-            gameObject.transform.localPosition = new Vector3(
-                mousePosition.x - startPositionX,
-                mousePosition.y - startPositionY,
-                this.transform.localPosition.z);
+            deck = findDeck("PlayDeckUI");
         }
-    }
 
-    private void handleMouseDown()
-    {
-        if (Input.GetMouseButtonDown(0))
+        else if (GetComponent<GammaCard>() != null)
         {
-            IsBeingHeld = true;
-            var mousePosition = getMousePosition();
-
-            startPositionX = mousePosition.x - this.transform.localPosition.x;
-            startPositionY = mousePosition.y - this.transform.localPosition.y;
+            deck = findDeck("GammaDeckUI");
         }
+
+        deck.ReturnCard(this);
     }
 
-    private void handleMouseUp()
+    private Deck findDeck(string deckName)
     {
-        IsBeingHeld = false;
-    }
+        var decks = FindObjectsOfType<Deck>();
+        foreach (var deck in decks)
+        {
+            if (deck.name == deckName)
+            {
+                return deck;
+            }
+        }
 
-    private Vector3 getMousePosition()
-    {
-        var mousePosition = Input.mousePosition;
-        var mousePositionWorldPoint = Camera.main.ScreenToWorldPoint(mousePosition);
-
-        return mousePosition;
-    }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        handleMouseDown();
-    }
-
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        handleMouseUp();
+        return null;
     }
 }
