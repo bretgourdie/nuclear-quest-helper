@@ -199,7 +199,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3488980566117741493}
-        m_MethodName: Roll
+        m_MethodName: ClickToRoll
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -221,3 +221,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3c4b8ab1073208488a33e45864f6285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DiceRollSound: {fileID: 8300000, guid: 7708f06fa6c21b74b98e7d34b815bd92, type: 3}

@@ -182,6 +182,7 @@ MonoBehaviour:
   DiceToRoll:
   - {fileID: 1791567186}
   - {fileID: 66590275}
+  DiceRollSound: {fileID: 8300000, guid: 7708f06fa6c21b74b98e7d34b815bd92, type: 3}
 --- !u!114 &49030167
 MonoBehaviour:
   m_ObjectHideFlags: 0

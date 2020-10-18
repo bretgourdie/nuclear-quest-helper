@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Dice : MonoBehaviour
 {
+    [SerializeField] AudioClip DiceRollSound = default;
+
     private Text _buttonText;
 
     // Start is called before the first frame update
@@ -21,6 +23,12 @@ public class Dice : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void ClickToRoll()
+    {
+        AudioSource.PlayClipAtPoint(DiceRollSound, Camera.main.transform.position);
+        Roll();
     }
 
     public void Roll()
