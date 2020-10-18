@@ -166,6 +166,8 @@ public class Hand : MonoBehaviour
         handleGeigerAdjustment(_slider, -gammaCard.RadiationAmount);
 
         removeFromList(gammaCard.gameObject, _gammaCards);
+
+        resetCardStack(_gammaCards);
     }
 
     private void handlePlayCardDiscard(PlayCard playCard)
@@ -176,6 +178,8 @@ public class Hand : MonoBehaviour
         }
 
         removeFromList(playCard.gameObject, _playCards);
+
+        resetCardStack(_playCards);
     }
 
     private bool isReal(Component component)
