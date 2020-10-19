@@ -30,6 +30,13 @@ public class Card : MonoBehaviour
         deck.ReturnCard(this);
 
         removeCardFromHand();
+
+        resetScale();
+    }
+
+    private void resetScale()
+    {
+        transform.localScale = new Vector3(1f, 1f);
     }
 
     private void removeCardFromHand()
