@@ -113,5 +113,16 @@ PrefabInstance:
       propertyPath: PlaysImmediately
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8895243679044120815, guid: 6cc31840cafb06b418971506c262c1b2,
+        type: 3}
+      propertyPath: InstructionsOnGain
+      value: Add to hand; use at the end of a turn to discard all Gamma Radiation
+        cards
+      objectReference: {fileID: 0}
+    - target: {fileID: 8895243679044120815, guid: 6cc31840cafb06b418971506c262c1b2,
+        type: 3}
+      propertyPath: InstructionsOnPlay
+      value: Discard all Gamma Radiation cards
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc31840cafb06b418971506c262c1b2, type: 3}

@@ -101,12 +101,17 @@ PrefabInstance:
     - target: {fileID: 7880809618669620005, guid: 6cc31840cafb06b418971506c262c1b2,
         type: 3}
       propertyPath: m_Name
-      value: CardUI
+      value: Fusion3
       objectReference: {fileID: 0}
     - target: {fileID: 8895243679044120815, guid: 6cc31840cafb06b418971506c262c1b2,
         type: 3}
       propertyPath: PlaysImmediately
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8895243679044120815, guid: 6cc31840cafb06b418971506c262c1b2,
+        type: 3}
+      propertyPath: InstructionsOnGain
+      value: Move forward 14 spaces
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc31840cafb06b418971506c262c1b2, type: 3}
