@@ -71,6 +71,7 @@ public class Hand : MonoBehaviour
 
         else
         {
+            playCard.WasPlayedFromHand = true;
             addToList(playCard.gameObject, _playCards);
             resetCardStack(_playCards);
         }
