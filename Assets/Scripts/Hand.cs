@@ -81,11 +81,6 @@ public class Hand : MonoBehaviour
         handleSkipTurnMarker(playCard.SkipNextTurn);
 
         cardIsNoLongerActive();
-
-        if (playCard.DrawRadiationAfterUse)
-        {
-            _gammaCardsDeck.DrawCard();
-        }
     }
 
     private void handleGammaCardGain(GammaCard gammaCard)

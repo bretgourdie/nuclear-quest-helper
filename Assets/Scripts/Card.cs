@@ -46,6 +46,11 @@ public class Card : MonoBehaviour
         removeCardFromHand();
 
         resetScale();
+
+        if (playCard?.DrawRadiationAfterUse ?? false)
+        {
+            findDeck("GammaDeckUI").DrawCard();
+        }
     }
 
     private void resetScale()
