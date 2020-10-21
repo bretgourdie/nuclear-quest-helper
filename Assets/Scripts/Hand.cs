@@ -18,6 +18,7 @@ public class Hand : MonoBehaviour
     private Deck _playCardsDeck;
     private Toggle _skipTurnMarker;
     private Slider _slider;
+    private Text _sliderText;
 
     private float _handCardHorizontalOffset = 50;
     private float _handCardVerticalOffset = 30;
@@ -36,6 +37,7 @@ public class Hand : MonoBehaviour
         _playCardsDeck = PlayCardsDeck.GetComponent<Deck>();
         _skipTurnMarker = SkipTurnMarker.GetComponent<Toggle>();
         _slider = GeigerCounter.GetComponent<Slider>();
+        _sliderText = GeigerCounter.transform.Find("ValueText").GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -83,20 +85,6 @@ public class Hand : MonoBehaviour
         if (playCard.DrawRadiationAfterUse)
         {
             _gammaCardsDeck.DrawCard();
-        }
-    }
-
-    private void handleLoseAllGammaRadiation(bool loseAllGammaRadiation)
-    {
-        if (loseAllGammaRadiation)
-        {
-            foreach (var gammaCard in _gammaCards)
-            {
-                _slider.value -= gammaCard.GetComponent<GammaCard>().RadiationAmount;
-                _gammaCardsDeck.ReturnCard(gammaCard.GetComponent<Card>());
-            }
-
-            _gammaCards.RemoveAll(x => true);
         }
     }
 
@@ -154,7 +142,13 @@ public class Hand : MonoBehaviour
         if (slider != null)
         {
             slider.value += radiationAmount;
+            setSliderText(slider, _sliderText);
         }
+    }
+
+    private void setSliderText(Slider slider, Text sliderText)
+    {
+        sliderText.text = ((int)slider.value * 5).ToString();
     }
 
     private void handleGammaCardDiscard(GammaCard gammaCard)
